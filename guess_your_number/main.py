@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 
 def main() -> None:
@@ -10,7 +10,7 @@ def main() -> None:
     guess = low
 
     while user_input != "c" and low != high:
-        guess = random.randint(low, high)
+        guess = randint(low, high)
 
         user_input = input(
             f"Is your number {guess}??\n (C) correct / (H) high / (L) low: "

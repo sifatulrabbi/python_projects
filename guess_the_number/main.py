@@ -1,11 +1,11 @@
-import random
+from random import randint
 
 
 def main() -> None:
     low = 1
     high = int(input("Define the max number: "))
 
-    number = random.randint(1, high)
+    number = randint(1, high)
     guess = 0
 
     while guess != number:
