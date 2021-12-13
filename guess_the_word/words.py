@@ -1,15 +1,19 @@
-# from data import words_data
+from data import words_data
 from random import randint
-
-words_data = ["hello", "potato"]
 
 
 class Words:
     __words: list[str] = []
+    __test: bool
 
-    def __init__(self) -> None:
-        for word in words_data:
-            self.__words.append(word.upper())
+    def __init__(self, test: bool) -> None:
+        self.__test = test
+
+        if self.__test:
+            self.__words = ["HELLO", "WORLD"]
+        else:
+            for word in words_data:
+                self.__words.append(word.upper())
 
     def validate_word(self, word: str) -> bool:
         if word in self.__words:
