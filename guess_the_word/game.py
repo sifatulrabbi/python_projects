@@ -26,13 +26,7 @@ class Game:
 
         i = 0
         while i < length:
-            if rand_1 == i:
-                new_word.append("_")
-            elif rand_2 == i:
-                new_word.append("_")
-            elif rand_3 == i:
-                new_word.append("_")
-            elif rand_4 == i:
+            if rand_1 is i or rand_2 is i or rand_3 is i or rand_4 is i:
                 new_word.append("_")
             else:
                 new_word.append(word[i])
