@@ -1,39 +1,36 @@
-from bmi import BMICalculator
-from bmr import BMRCalculator
+from calculator import Calculator
 
 
 def main():
-    BMI = BMICalculator()
-    BMR = BMRCalculator()
-
-    done = False
+    calculator = Calculator()
     print("💪 Calculate your BMI or BMR 💪")
 
+    done = False
+
     while not done:
-        option = input("What do want to calculate?\n(BMI / BMR): ").upper()
-        _format = int(input("Choose your format (1) cm/lb or (2) inch/kg: "))
+        mode = int(input("Choose your format (1) cm/kg or (2) inch/lb: "))
 
-        if _format == 1 or _format == 2:
-            if option == "BMR":
-                print("BMR")
-
-                BMR.calculate()
-                done = True
-            elif option == "BMI":
-                print("\nBMI")
-
-                height = float(input("Your height is: "))
-                weight = float(input("Your weight is: "))
-
-                if _format == 1:
-                    BMI.cm_lb(height=height, weight=weight)
-                elif _format == 2:
-                    BMI.inch_kg(height=height, weight=weight)
-
-                done = True
+        if mode == 1:
+            calculator.set_mode("CM_KG")
+            break
+        elif mode == 2:
+            calculator.set_mode("INCH_LB")
+            break
         else:
-            print("\nIncorrect format! Please input 1 or 2")
-    return
+            print("\nPlease input a valid mode 1 or 2!")
+
+    while not done:
+        height = float(input("Your height is: "))
+        weight = float(input("Your weight is: "))
+        age = int(input("Your age is: "))
+        sex = input("Your sex is (male/female): ").upper()
+
+        if sex == "MALE" or sex == "FEMALE":
+            calculator.set_info(height=height, weight=weight, age=age, sex=sex)
+            break
+
+    calculator.calc_bmi()
+    calculator.calc_bmr()
 
 
 main()

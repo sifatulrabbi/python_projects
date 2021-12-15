@@ -11,3 +11,6 @@ class Converter:
 
     def lb_to_kg(self, val: float) -> float:
         return val / 2.21
+
+    def inch_to_cm(self, val: float) -> float:
+        return val * 2.54
