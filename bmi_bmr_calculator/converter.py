@@ -2,11 +2,12 @@ class Converter:
     def __init__(self) -> None:
         pass
 
-    def __inch_to_cm(self, val) -> int:
-        return 1
+    def inch_to_meter(self, val: float) -> float:
+        cm = val * 2.54
+        return self.cm_to_meter(cm)
 
-    def __cm_to_meter(self, val) -> int:
-        return 1
+    def cm_to_meter(self, val: float) -> float:
+        return val / 100
 
-    def __feet_to_inch(self, val) -> int:
-        return 1
+    def lb_to_kg(self, val: float) -> float:
+        return val / 2.21

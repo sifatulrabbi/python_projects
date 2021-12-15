@@ -3,6 +3,9 @@ from bmr import BMRCalculator
 
 
 def main():
+    BMI = BMICalculator()
+    BMR = BMRCalculator()
+
     done = False
     print("💪 Calculate your BMI or BMR 💪")
 
@@ -14,20 +17,19 @@ def main():
             if option == "BMR":
                 print("BMR")
 
-                BMRCalculator().calculate()
+                BMR.calculate()
                 done = True
             elif option == "BMI":
                 print("\nBMI")
 
-                height = input("Your height is: ")
-                weight = input("Your weight is: ")
+                height = float(input("Your height is: "))
+                weight = float(input("Your weight is: "))
 
                 if _format == 1:
-                    BMICalculator.cm_lb()
+                    BMI.cm_lb(height=height, weight=weight)
                 elif _format == 2:
-                    BMICalculator.inch_kg()
+                    BMI.inch_kg(height=height, weight=weight)
 
-                BMICalculator().calculate(height=height, weight=weight)
                 done = True
         else:
             print("\nIncorrect format! Please input 1 or 2")
