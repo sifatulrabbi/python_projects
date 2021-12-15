@@ -18,9 +18,9 @@ class BMICalculator:
         meter_height = self.__converter.cm_to_meter(height)
         kg_weight = self.__converter.lb_to_kg(weight)
 
-        return self.__calculate(meter_height, kg_weight)
+        self.__calculate(meter_height, kg_weight)
 
     def inch_kg(self, height: float, weight: float) -> None:
         meter_height = self.__converter.inch_to_meter(height)
 
-        return self.__calculate(meter_height, weight)
+        self.__calculate(meter_height, weight)
