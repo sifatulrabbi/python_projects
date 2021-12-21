@@ -70,3 +70,23 @@ def get_num():
 
 
 # print(get_num())
+
+
+# Class decorator
+def practice_decor():
+    def decorator(cls):
+        cls.username = "Rabbi"
+        return cls
+
+    return decorator
+
+
+@practice_decor()
+class User:
+    username = "Sifatul"
+
+    def __init__(self):
+        pass
+
+
+print(User().username)
