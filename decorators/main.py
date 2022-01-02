@@ -10,7 +10,9 @@ def calc_time():
             func(*args, **kwargs)
 
             end = time()
-            print(f"Total time to execute the '{func.__name__}' was: {end - begin}s")
+            print(
+                f"Total time to execute the '{func.__name__}' was: {end - begin}s"
+            )
 
         return inner
 
@@ -22,11 +24,14 @@ def do_factorial(num: int):
     sleep(2)
     print(factorial(num))
 
+    # do_factorial(10)
 
-# do_factorial(10)
 
-# printing value after and before with decorator
 def hello_decorator(func):
+    """
+    Changing return values of a function with decorators
+    """
+
     def inner1(*args, **kwargs):
         print("Hello before")
 
@@ -46,8 +51,11 @@ def do_sum(x: int, y: int):
 # do_sum(10, 15)
 
 
-# Decorator chaining
 def multiply_10x(func):
+    """
+    Decorator chaining
+    """
+
     def inner(*args, **kwargs):
         x = func(*args, **kwargs)
         return x * 10
