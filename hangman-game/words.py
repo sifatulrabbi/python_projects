@@ -1,4 +1,4 @@
-word_list = [
+word_list: list[str] = [
     "wares",
     "soup",
     "mount",

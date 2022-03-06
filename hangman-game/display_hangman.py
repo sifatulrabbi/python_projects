@@ -1,5 +1,6 @@
 def display_hangman(tries: int) -> str:
-    stages = [  # final state: head, torso, both arms, and both legs
+    stages: list[str] = [
+        # final state: head, torso, both arms, and both legs
         """
         --------
         |      |
